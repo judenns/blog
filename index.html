@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
+
+    <title>Frontend Mentor | Personal blog</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header>
+        <div class="container">
+          <nav class="nav">
+            <img class="nav-logo" src="/assets/images/image-avatar.jpg" />
+            <ul class="nav-items-wrapper">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/newsletter.html">Newsletter</a></li>
+            </ul>
+            <button><img src="/assets/images/icon-sun.svg" /></button>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <section class="section">
+            <h1>Hi, I'm Jason</h1>
+            <p>
+              I’m on a journey to become a front-end web developer. I love
+              building little projects, trying out new coding techniques, and
+              sharing what I learn along the way. When I’m not at my desk,
+              you’ll find me reading, hiking through the mountains, or
+              challenging myself on rock-climbing walls. I started this blog to
+              document my progress, keep myself accountable, and hopefully
+              inspire anyone else who’s learning to code. Welcome to my corner
+              of the internet, and thanks for stopping by!
+            </p>
+          </section>
+          <section class="section">
+            <div>
+              <h2>Latest Article</h2>
+              <ul id="blog-list"></ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Made with love</div></footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

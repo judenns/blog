@@ -1,0 +1,71 @@
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #c0bfbf;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c0bfbf;
+  background-color: #1c1a19;
+  padding-block: 1rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: #1c1a19;
+  border: none;
+  min-width: 40px;
+  cursor: pointer;
+  border: 1.5px solid #34302d;
+  border-radius: 0.5rem;
+}
+
+.app-wrapper {
+  border: solid 1px #34302d;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+  border: 1px solid #34302d;
+  border-radius: 0.75rem;
+}
+
+.nav-logo {
+  width: 40px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.nav-items-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section {
+  padding-block: 3rem;
+  padding-inline: 1rem;
+}
