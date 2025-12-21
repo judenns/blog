@@ -1,22 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Personal blog - Blog detail</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
 
-  <!-- If you're using the data.json file, this page will be created using individual articles -->
+    <title>Frontend Mentor | Personal blog - Blog detail</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header>
+        <div class="container">
+          <nav class="nav">
+            <img class="nav-logo" src="/assets/images/image-avatar.jpg" />
+            <ul class="nav-items-wrapper">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/newsletter.html">Newsletter</a></li>
+            </ul>
+            <button>
+              <img src="/assets/images/icon-sun.svg" />
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <section class="section">
+            <article>
+              <h1 id="blog-title" class="blog-title"></h1>
+              <p id="blog-date" class="blog-date"></p>
+              <p id="blog-description" class="blog-description"></p>
+              <div id="blog-content" class="article-content"></div>
+            </article>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Made with love</div></footer>
+    </div>
 
-  <!-- If you're building a static site, follow the steps below: -->
-
-  <!-- 1. Create a HTML file for each blog post using the slug property from the data.json file as each file name -->
-  <!-- 2. Take the content for each article and add the necessary HTML based on the markdown content -->
-  <!-- 3. Add links to the relevant HTML articles on the homepage and blog index -->
-
-</body>
+    <script type="module" src="/src/details.js"></script>
+  </body>
 </html>
+
