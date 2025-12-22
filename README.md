@@ -13,15 +13,15 @@ blog/
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Run frontend dev server |
-| `pnpm dev:cms` | Run CMS dev server |
-| `pnpm dev:all` | Run both in parallel |
-| `pnpm build` | Build frontend |
-| `pnpm format` | Format code (Prettier) |
-| `pnpm lint` | Lint code (Biome) |
-| `pnpm lint:fix` | Lint + auto fix |
+| Command         | Description             |
+| --------------- | ----------------------- |
+| `pnpm dev`      | Run frontend dev server |
+| `pnpm dev:cms`  | Run CMS dev server      |
+| `pnpm dev:all`  | Run both in parallel    |
+| `pnpm build`    | Build frontend          |
+| `pnpm format`   | Format code (Prettier)  |
+| `pnpm lint`     | Lint code (Biome)       |
+| `pnpm lint:fix` | Lint + auto fix         |
 
 ## Tech Stack
 
