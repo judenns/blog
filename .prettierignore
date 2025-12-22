@@ -7,4 +7,10 @@ coverage
 **/.hg
 **/node_modules
 
+# JS/TS handled by Biome
 **/*.js
+**/*.ts
+**/*.jsx
+**/*.tsx
+**/*.mjs
+**/*.cjs
