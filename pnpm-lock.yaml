@@ -6,7 +6,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  packages/frontend:
     devDependencies:
       marked:
         specifier: ^17.0.1

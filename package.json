@@ -1,12 +1,9 @@
 {
-	"devDependencies": {
-		"marked": "^17.0.1",
-		"prettier": "^3.7.4",
-		"vite": "^7.3.0"
-	},
+	"name": "blog-monorepo",
+	"private": true,
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
+		"dev:frontend": "pnpm --filter frontend dev",
+		"dev:cms": "pnpm --filter cms dev",
+		"build:frontend": "pnpm --filter frontend build"
 	}
 }
