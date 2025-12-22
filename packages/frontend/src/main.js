@@ -1,14 +1,13 @@
 import "./index.css";
-import data from "../data.json";
 
-// Your JS code here
-console.log("Vite is running!");
-console.log(data);
+const response = await fetch("http://localhost:3000/api/posts");
+const result = await response.json();
+const blogs = result.docs;
 
 const blogContainer = document.getElementById("blog-list");
 
 // Render blog List
-data.forEach((article) => {
+blogs.forEach((article) => {
     const item = document.createElement("li");
     const date = new Date(article.publishedAt).toLocaleDateString(undefined, {
         year: "numeric",

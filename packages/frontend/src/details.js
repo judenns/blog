@@ -1,13 +1,12 @@
 import "./index.css";
-import data from "/data.json";
-import { marked } from "marked";
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const blogSlug = urlParams.get("slug");
 const blogContent = document.getElementById("blog-content");
-
-const targetBlog = data.find((item) => item.slug === blogSlug);
+const slug = new URLSearchParams(window.location.search).get("slug");
+const response = await fetch(
+    `http://localhost:3000/api/posts?where[slug][equals]=${slug}`,
+);
+const result = await response.json();
+const targetBlog = result.docs[0];
 
 if (!targetBlog) {
     window.location.href = "/index.html";
