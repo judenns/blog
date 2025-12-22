@@ -1,28 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Personal blog - Newsletter</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
 
-  Want to stay updated on my latest articles, coding tutorials, and personal 
-  adventures? Sign up for my newsletter! It's a simple way to keep track of 
-  new posts and occasional coding tips I discover. Just drop your email in 
-  the sign-up box, and I'll send you updates whenever there's something new 
-  to share.
-
-  I'd love to have you along for the ride and also hear about your own journey!
-
-  Email Address
-
-  Stay updated
-
-  Unsubscribe anytime. No spam, I promise 🙂
-
-</body>
+    <title>Frontend Mentor | Personal blog - Newsletter</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header>
+        <div class="container nav-container">
+          <nav class="nav">
+            <img class="nav-logo" src="/assets/images/image-avatar.jpg" />
+            <ul class="nav-items-wrapper">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/newsletter.html">Newsletter</a></li>
+            </ul>
+            <button class="btn btn-icon-only">
+              <img src="/assets/images/icon-sun.svg" />
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <section class="section">
+            <h1>Newsletter</h1>
+            <p>
+              Want to stay updated on my latest articles, coding tutorials, and personal
+              adventures? Sign up for my newsletter! It's a simple way to keep track of
+              new posts and occasional coding tips I discover. Just drop your email in
+              the sign-up box, and I'll send you updates whenever there's something new
+              to share.
+            </p>
+            <p>I'd love to have you along for the ride and also hear about your own journey!</p>
+            <p>Unsubscribe anytime. No spam, I promise.</p>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="footer-wrapper">
+            <p>Made with ❤️ and ☕️</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
