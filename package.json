@@ -2,8 +2,19 @@
 	"name": "blog-monorepo",
 	"private": true,
 	"scripts": {
+		"dev": "pnpm --filter frontend dev",
 		"dev:frontend": "pnpm --filter frontend dev",
 		"dev:cms": "pnpm --filter cms dev",
-		"build:frontend": "pnpm --filter frontend build"
+		"dev:all": "pnpm --parallel --filter './packages/*' dev",
+		"build": "pnpm --filter frontend build",
+		"build:frontend": "pnpm --filter frontend build",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.0",
+		"prettier": "^3.7.4"
 	}
 }
