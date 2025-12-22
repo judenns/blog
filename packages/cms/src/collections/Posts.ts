@@ -1,4 +1,19 @@
+import {
+    convertLexicalToHTML,
+    type HTMLConvertersFunction,
+} from "@payloadcms/richtext-lexical/html";
 import type { CollectionConfig } from "payload";
+
+const CMS_URL = process.env.CMS_URL || "http://localhost:3000";
+
+const htmlConverters: HTMLConvertersFunction = ({ defaultConverters }) => ({
+    ...defaultConverters,
+    upload: ({ node }) => {
+        const url = (node as any).value?.url || "";
+        const alt = (node as any).value?.alt || "";
+        return `<img src="${CMS_URL}${url}" alt="${alt}" />`;
+    },
+});
 
 export const Posts: CollectionConfig = {
     slug: "posts",
@@ -6,7 +21,20 @@ export const Posts: CollectionConfig = {
         useAsTitle: "title",
     },
     access: {
-        read: () => true, // Cho phép ai cũng đọc được
+        read: () => true,
+    },
+    hooks: {
+        afterRead: [
+            ({ doc }) => {
+                if (doc.content) {
+                    doc.contentHTML = convertLexicalToHTML({
+                        data: doc.content,
+                        converters: htmlConverters,
+                    });
+                }
+                return doc;
+            },
+        ],
     },
     fields: [
         {

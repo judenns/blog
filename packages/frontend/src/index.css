@@ -207,6 +207,10 @@ button {
   margin-bottom: 0.75rem;
 }
 
+.article-content img {
+  max-width: 100%;
+}
+
 /* Blockquotes */
 .article-content blockquote {
   border-left: 4px solid #c0bfbf;

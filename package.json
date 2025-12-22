@@ -18,6 +18,7 @@
     "prettier": "^3.7.4"
   },
   "dependencies": {
+    "@payloadcms/richtext-lexical": "3.69.0",
     "mongodb": "^7.0.0"
   }
 }
