@@ -3,10 +3,13 @@
 ## Khái niệm cơ bản
 
 ### CMS là gì?
+
 **CMS (Content Management System)** = hệ thống quản lý nội dung.
+
 - Thay vì edit file `data.json` bằng tay, bạn có giao diện đẹp để thêm/sửa/xóa bài viết
 
 ### MongoDB Atlas là gì?
+
 - MongoDB chạy trên cloud (không cần cài trên máy)
 - Free tier 512MB - đủ cho practice
 - Data persist qua các session
@@ -16,6 +19,7 @@
 ## Bước 1: Tạo MongoDB Atlas Account (~5 phút)
 
 ### 1.1 Đăng ký
+
 1. Vào https://www.mongodb.com/cloud/atlas/register
 2. Đăng ký bằng **Google** hoặc email
 3. Khi hỏi mục đích → chọn **Learning MongoDB**
@@ -44,6 +48,7 @@
 5. **Đợi 1-2 phút** để apply
 
 > **Tại sao cần `0.0.0.0/0`?**
+>
 > - WSL có IP riêng, khác Windows
 > - IP WSL thay đổi mỗi lần restart
 > - `0.0.0.0/0` cho phép tất cả IP (chỉ dùng cho dev)
@@ -53,9 +58,11 @@
 1. Click **Connect** trên cluster
 2. Chọn **Drivers**
 3. Copy connection string:
+
 ```
 mongodb+srv://admin:<db_password>@payload-blog.xxxxx.mongodb.net/?retryWrites=true&w=majority
 ```
+
 4. **Thay `<db_password>`** bằng password thật
 
 ---
@@ -68,12 +75,13 @@ pnpm create payload-app@latest cms
 ```
 
 ### Trả lời câu hỏi:
-| Câu hỏi | Chọn |
-|---------|------|
-| Template | **blank** |
-| Database | **mongodb** |
+
+| Câu hỏi           | Chọn               |
+| ----------------- | ------------------ |
+| Template          | **blank**          |
+| Database          | **mongodb**        |
 | Connection string | **Paste từ Atlas** |
-| TypeScript | **Yes** |
+| TypeScript        | **Yes**            |
 
 ---
 
@@ -82,11 +90,13 @@ pnpm create payload-app@latest cms
 File `.env` là **hidden file** (bắt đầu bằng `.`).
 
 ### Xem file ẩn:
+
 ```bash
 ls -la packages/cms/
 ```
 
 ### Nội dung `.env`:
+
 ```
 DATABASE_URI=mongodb+srv://admin:PASSWORD@cluster.mongodb.net/payload-cms
 PAYLOAD_SECRET=any-random-string-here
@@ -150,9 +160,10 @@ pnpm dev
 ## Bước 7: Update Frontend
 
 ### main.js
+
 ```javascript
 // Cũ
-import data from "../data.json"
+import data from '../data.json'
 
 // Mới
 const response = await fetch('http://localhost:3000/api/posts')
@@ -160,9 +171,12 @@ const { docs } = await response.json()
 ```
 
 ### details.js
+
 ```javascript
 const slug = new URLSearchParams(window.location.search).get('slug')
-const response = await fetch(`http://localhost:3000/api/posts?where[slug][equals]=${slug}`)
+const response = await fetch(
+  `http://localhost:3000/api/posts?where[slug][equals]=${slug}`
+)
 const { docs } = await response.json()
 const post = docs[0]
 ```
@@ -186,6 +200,7 @@ cd packages/cms && pnpm payload generate:importmap
 ```
 
 **URLs:**
+
 - Admin: http://localhost:3000/admin
 - API: http://localhost:3000/api/posts
 - Frontend: http://localhost:5173
@@ -199,6 +214,7 @@ cd packages/cms && pnpm payload generate:importmap
 **Nguyên nhân:** IP chưa được whitelist trong MongoDB Atlas
 
 **Fix:**
+
 1. Vào https://cloud.mongodb.com → **Network Access**
 2. Click **Add IP Address**
 3. Nhập `0.0.0.0/0` (Allow from Anywhere)
@@ -214,10 +230,12 @@ cd packages/cms && pnpm payload generate:importmap
 **Nguyên nhân:** Password sai trong connection string
 
 **Fix:**
+
 1. Vào Atlas → **Database Access**
 2. Edit user → **Change Password**
 3. Copy password mới
 4. Update file `.env`:
+
 ```
 DATABASE_URI=mongodb+srv://admin:NEW_PASSWORD@...
 ```
@@ -229,6 +247,7 @@ DATABASE_URI=mongodb+srv://admin:NEW_PASSWORD@...
 **Nguyên nhân:** Import map chưa được generate
 
 **Fix:**
+
 ```bash
 cd packages/cms
 pnpm payload generate:importmap
@@ -236,6 +255,7 @@ pnpm dev
 ```
 
 **Khi nào cần chạy lại:**
+
 - Thêm/xóa Payload plugin
 - Update Payload version
 - Thêm custom admin component
@@ -247,6 +267,7 @@ pnpm dev
 **Nguyên nhân:** File ẩn (hidden file)
 
 **Fix:**
+
 ```bash
 # Xem file ẩn trong terminal
 ls -la packages/cms/
@@ -262,6 +283,7 @@ cp packages/cms/.env.example packages/cms/.env
 **Nguyên nhân:** Chưa config CORS
 
 **Fix:** Thêm vào `payload.config.ts`:
+
 ```typescript
 cors: ['http://localhost:5173'],
 ```
