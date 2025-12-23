@@ -1,14 +1,15 @@
 # Personal Blog
 
-Monorepo chứa frontend blog và CMS.
+Monorepo chứa frontend blog và Payload CMS.
 
 ## Structure
 
 ```
 blog/
 ├── packages/
-│   ├── frontend/    # Vite + vanilla JS
-│   └── cms/         # Payload CMS (coming soon)
+│   ├── frontend/    # Vite + Vanilla JS
+│   └── cms/         # Payload CMS + Next.js
+├── DEPLOYMENT.md    # Hướng dẫn deploy Vercel
 ```
 
 ## Scripts
@@ -25,6 +26,11 @@ blog/
 
 ## Tech Stack
 
-- **Frontend:** Vite, Vanilla JS, Marked (markdown)
-- **CMS:** Payload CMS, MongoDB (coming soon)
+- **Frontend:** Vite, Vanilla JS, Marked
+- **CMS:** Payload CMS, Next.js, MongoDB Atlas
 - **Tools:** Prettier, Biome, pnpm workspaces
+- **Hosting:** Vercel
+
+## Deployment
+
+Xem [DEPLOYMENT.md](./DEPLOYMENT.md) để deploy lên Vercel.
