@@ -1,6 +1,6 @@
 import "./index.css";
 
-const response = await fetch("http://localhost:3000/api/posts");
+const response = await fetch(`${import.meta.env.VITE_API_URL}/api/posts`);
 const result = await response.json();
 const blogs = result.docs;
 

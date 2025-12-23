@@ -4,7 +4,7 @@ const blogContent = document.getElementById("blog-content");
 
 const slug = new URLSearchParams(window.location.search).get("slug");
 const response = await fetch(
-    `http://localhost:3000/api/posts?where[slug][equals]=${slug}`,
+    `${import.meta.env.VITE_API_URL}/api/posts?where[slug][equals]=${slug}`,
 );
 const result = await response.json();
 const targetBlog = result.docs[0];
