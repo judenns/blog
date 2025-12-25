@@ -37,10 +37,10 @@
             "packages/frontend/*.js",
             "packages/cms/src/**/*.ts",
             "packages/cms/src/**/*.tsx",
-            "!packages/cms/src/payload-types.ts",
             "*.json",
             "packages/*/*.json",
-            "packages/*/src/**/*.json"
+            "packages/*/src/**/*.json",
+            "!**/payload-types.ts"
         ],
         "ignoreUnknown": true
     }
