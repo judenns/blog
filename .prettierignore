@@ -1,16 +1,12 @@
-# Ignore artifacts:
-build
-coverage
-
-**/.git
-**/.svn
-**/.hg
-**/node_modules
-
 # JS/TS handled by Biome
-**/*.js
-**/*.ts
-**/*.jsx
-**/*.tsx
-**/*.mjs
-**/*.cjs
+*.js
+*.ts
+*.tsx
+*.mjs
+*.cjs
+*.json
+
+# Build outputs
+dist/
+.next/
+node_modules/

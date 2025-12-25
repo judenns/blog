@@ -23,7 +23,6 @@ const date = new Date(targetBlog.publishedAt).toLocaleDateString(undefined, {
 
 document.getElementById("blog-title").textContent = targetBlog.title;
 document.getElementById("blog-date").textContent = date;
-document.getElementById("blog-description").textContent =
-    targetBlog.description;
+document.getElementById("blog-description").textContent = targetBlog.description;
 
 blogContent.innerHTML = targetBlog.contentHTML;

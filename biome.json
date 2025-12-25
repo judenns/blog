@@ -1,28 +1,47 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-    "organizeImports": {
-        "enabled": true
-    },
+    "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true
+            "recommended": true,
+            "correctness": {
+                "noUnusedVariables": "warn",
+                "noUnusedImports": "warn"
+            },
+            "style": {
+                "useConst": "error"
+            }
         }
     },
     "formatter": {
         "enabled": true,
         "indentStyle": "space",
-        "indentWidth": 4
+        "indentWidth": 4,
+        "lineWidth": 100
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "double",
+            "semicolons": "always",
+            "trailingCommas": "all"
+        }
+    },
+    "json": {
+        "formatter": {
+            "trailingCommas": "none"
+        }
     },
     "files": {
-        "ignore": ["node_modules", "dist", ".git"],
-        "include": [
-            "**/*.js",
-            "**/*.ts",
-            "**/*.jsx",
-            "**/*.tsx",
-            "**/*.mjs",
-            "**/*.cjs"
-        ]
+        "includes": [
+            "packages/frontend/src/**/*.js",
+            "packages/frontend/*.js",
+            "packages/cms/src/**/*.ts",
+            "packages/cms/src/**/*.tsx",
+            "!packages/cms/src/payload-types.ts",
+            "*.json",
+            "packages/*/*.json",
+            "packages/*/src/**/*.json"
+        ],
+        "ignoreUnknown": true
     }
 }

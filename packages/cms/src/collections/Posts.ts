@@ -11,7 +11,8 @@ const htmlConverters: HTMLConvertersFunction = ({ defaultConverters }) => ({
     upload: ({ node }) => {
         const url = (node as any).value?.url || "";
         const alt = (node as any).value?.alt || "";
-        return `<img src="${CMS_URL}${url}" alt="${alt}" />`;
+        const fullUrl = url.startsWith("http") ? url : `${CMS_URL}${url}`;
+        return `<img src="${fullUrl}" alt="${alt}" />`;
     },
 });
 
