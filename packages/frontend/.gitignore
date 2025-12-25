@@ -1,31 +1,48 @@
 .vercel
-.dist
-.build
 
-# Các thư mục phụ thuộc (Dependencies)
+# Dependencies
 node_modules/
+
+# Build output
 dist/
 dist-ssr/
+build/
+.output/
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Local env
 *.local
 
-# Nhật ký lỗi (Logs)
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Biến môi trường và bảo mật (Environment variables)
+# Coverage
+coverage/
+*.lcov
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Environment variables
 .env
 .env.development.local
 .env.test.local
 .env.production.local
 .env.local
 
-# Tệp tin hệ thống (OS)
+# OS
 .DS_Store
 Thumbs.db
 
-# Cấu hình IDE (VS Code, WebStorm)
+# IDE
 .vscode/
 .idea/
 *.suo

@@ -22,10 +22,16 @@ npm-debug.log*
 /coverage
 
 # Production
-/build
-/dist
-/.next
-/out
+build/
+dist/
+.output/
+.next/
+out/
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
 # IDEs and editors
 /.idea
